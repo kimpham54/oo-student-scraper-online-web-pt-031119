@@ -35,6 +35,7 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
+<<<<<<< HEAD
     # binding.pry
     profile = {}
 
@@ -78,3 +79,29 @@ end
         #   :profile_quote=>"\"Forget safety. Live where you fear to live. Destroy your reputation. Be notorious.\" - Rumi",
         #   :bio=> "I'm a school"
         #  }
+=======
+    binding.pry
+    profile = {
+      :twitter => doc.css()
+      :linkedin => doc.css(),
+      :github => doc.xpath(//div[@class='social-icon-container']/img[@src='../assets/img/twitter-icon.png']),
+      :blog => doc.css(),
+      :profile_quote => doc.css(),
+      :bio => doc.css()
+    }
+
+
+
+
+
+    # => {:twitter=>"http://twitter.com/flatironschool",
+        #   :linkedin=>"https://www.linkedin.com/in/flatironschool",
+        #   :github=>"https://github.com/learn-co,
+        #   :blog=>"http://flatironschool.com",
+        #   :profile_quote=>"\"Forget safety. Live where you fear to live. Destroy your reputation. Be notorious.\" - Rumi",
+        #   :bio=> "I'm a school"
+        #  }
+  end
+
+end
+>>>>>>> e14d13944132de46835b98fdf0ee386541059aef
